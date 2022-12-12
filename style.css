@@ -6,7 +6,11 @@ body {
 /* Utils */
 
 /* Row boxes */
-#boxes-row .col-4 {
+#boxes-row .col-3 {
 height: 50px;
+margin: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
 text-align: center;
 }
