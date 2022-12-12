@@ -44,4 +44,22 @@ btnCreate.addEventListener('click', function () {
     const maxNumber = parseInt(inputMax.value.trim());
     console.log(maxNumber);
 
+    // 2b - Validazione degli input raccolti;
+    if(!boxNumber || isNaN(boxNumber) || boxNumber < 1 || boxNumber > 20) {
+        alert('Devi inserire un numero di box tra 1 e 20');
+        return;
+    }
+
+    if(!minNumber || isNaN(minNumber) || minNumber < 1 || minNumber > 29) {
+        alert('Devi inserire un min random tra 1 e 29');
+        return;
+    }
+
+    if(!maxNumber || isNaN(maxNumber) || maxNumber < 2 || maxNumber > 30) {
+        alert('Devi inserire un max random tra 2 e 30');
+        return;
+    }
+
+    
+
 });
