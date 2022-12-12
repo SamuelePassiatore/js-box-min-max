@@ -4,3 +4,9 @@ body {
 }
 
 /* Utils */
+
+/* Row boxes */
+#boxes-row .col-4 {
+height: 50px;
+text-align: center;
+}

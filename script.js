@@ -15,7 +15,8 @@ Crea inoltre un bottone reset che svuota i valori negli input e cancella i box g
 2 - Aggancio l'event listener al button genera;
     2a - Recupero valori degli input;
     2a2 - Validazione degli input raccolti;
-    2b - Creo dei numeri randomici, partendo dai parametri specificati dall'utente;
+    2b - Creo il ciclo for per il numero di box;
+    2b2 - Creo dei numeri randomici, partendo dai parametri specificati dall'utente;
     2c - Assegno il colore verde ai numeri pari e il colore rosso ai numeri dispari;
     2d - Inserisco i numeri randomici all'interno del box;
     2e - Mostro la row dei boxes che di default ha d-none;
@@ -31,6 +32,7 @@ const inputMin = document.getElementById('min-num');
 const inputMax = document.getElementById('max-num');
 const btnCreate = document.getElementById('btn-create');
 const btnReset = document.getElementById('btn-reset');
+const boxesRow = document.getElementById('boxes-row');
 
 // 2 - Aggancio l'event listener al button genera;
 btnCreate.addEventListener('click', function () {
@@ -44,7 +46,7 @@ btnCreate.addEventListener('click', function () {
     const maxNumber = parseInt(inputMax.value.trim());
     console.log(maxNumber);
 
-    // 2b - Validazione degli input raccolti;
+    // 2a2 - Validazione degli input raccolti;
     if(!boxNumber || isNaN(boxNumber) || boxNumber < 1 || boxNumber > 20) {
         alert('Devi inserire un numero di box tra 1 e 20');
         return;
@@ -60,6 +62,16 @@ btnCreate.addEventListener('click', function () {
         return;
     }
 
+    // 2b/2b2 - Creo il ciclo for per il numero di box e i numeri randomici;
+    
+    let content = '';
+    for (let i = 0; i < boxNumber; i++) {
+        let randomNumbers = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        console.log(randomNumbers);
+        content += `<div class="col-4 g-3">${randomNumbers}</div>`;
+    }
+
+    boxesRow.innerHTML = content;
     
 
 });
