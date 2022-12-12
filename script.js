@@ -32,5 +32,16 @@ const inputMax = document.getElementById('max-num');
 const btnCreate = document.getElementById('btn-create');
 const btnReset = document.getElementById('btn-reset');
 
+// 2 - Aggancio l'event listener al button genera;
+btnCreate.addEventListener('click', function () {
+    // 2a - Recupero valori degli input;
+    const boxNumber = parseInt(inputBox.value.trim());
+    console.log(boxNumber);
 
+    const minNumber = parseInt(inputMin.value.trim());
+    console.log(minNumber);
 
+    const maxNumber = parseInt(inputMax.value.trim());
+    console.log(maxNumber);
+
+});
