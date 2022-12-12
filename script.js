@@ -19,6 +19,7 @@ Crea inoltre un bottone reset che svuota i valori negli input e cancella i box g
     2b2 - Creo dei numeri randomici, partendo dai parametri specificati dall'utente;
     2c - Assegno il colore verde ai numeri pari e il colore rosso ai numeri dispari;
     2d - Inserisco i numeri randomici all'interno del box;
+    2e - Mostro la row dei boxes che di default ha d-none;
 3 - Aggancio l'event listener al reset button;
     3a - Svuoto i campi;
     3b - Copro la row dei boxes, ristabilendo il d-none;
@@ -74,9 +75,25 @@ btnCreate.addEventListener('click', function () {
             content += `<div class="col-3 bg-danger">${randomNumbers}</div>`;
         }
     }
-
     boxesRow.innerHTML = content;
 
-
-
+    // 2e - Mostro i box;
+    boxesRow.classList.remove('d-none');
 });
+
+
+btnReset.addEventListener('click', function () {
+    // 3a - Svuoto i campi;
+    // const number boxes
+    inputBox.value = '20';
+  
+    // const min random
+    inputMin.value = '1';
+    
+    // const max random 
+    inputMax.value = '30';
+
+    // 3b - Nascondo i box
+    boxesRow.classList.add('d-none');
+  
+  });
