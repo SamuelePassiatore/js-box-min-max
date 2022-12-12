@@ -24,3 +24,13 @@ Crea inoltre un bottone reset che svuota i valori negli input e cancella i box g
     3b - Copro la row dei boxes, ristabilendo il d-none;
 */
 
+
+// 1 - Prendo gli elementi dal DOM;
+const inputBox = document.getElementById('num-boxes');
+const inputMin = document.getElementById('min-num');
+const inputMax = document.getElementById('max-num');
+const btnCreate = document.getElementById('btn-create');
+const btnReset = document.getElementById('btn-reset');
+
+
+
